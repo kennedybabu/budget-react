@@ -1,4 +1,4 @@
-import { Container, Grid, Header, Icon, Segment, Statistic } from "semantic-ui-react";
+import { Button, Container, Form, Grid, Header, Icon, Segment, Statistic } from "semantic-ui-react";
 import "./App.css"
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
             <Grid.Column width={10} textAlign='left'>Something</Grid.Column>
             <Grid.Column width={3} textAlign='right'>$10.00</Grid.Column>
             <Grid.Column width={3}>
-              <Icon name="edit" bordered/>
+              <Icon name="edit" />
               <Icon name="trash" />
             </Grid.Column>
           </Grid.Row>
@@ -55,7 +55,7 @@ function App() {
             <Grid.Column width={10} textAlign='left'>Something else</Grid.Column>
             <Grid.Column width={3} textAlign='right'>$100.00</Grid.Column>
             <Grid.Column width={3}>
-              <Icon name="edit" bordered/>
+              <Icon name="edit" />
               <Icon name="trash" />
             </Grid.Column>
           </Grid.Row>
@@ -68,12 +68,28 @@ function App() {
             <Grid.Column width={10} textAlign='left'>Something</Grid.Column>
             <Grid.Column width={3} textAlign='right'>$20.00</Grid.Column>
             <Grid.Column width={3}>
-              <Icon name="edit" bordered/>
+              <Icon name="edit" />
               <Icon name="trash" />
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
+
+      <Header as='h3'>Add new transaction</Header>
+      <Form unstackable>
+        <Form.Group>
+          <Form.Input icon='tags' width={12} label='Description' placeholder='New shinny thing' />
+          <Form.Input width={4} label='Value' placeholder='100.00' icon='dollar' iconPosition='left'>
+
+          </Form.Input>
+        </Form.Group>
+        <Button.Group style={{marginTop:20}}>
+          <Button>Cancel</Button>
+          <Button.Or />
+          <Button primary >Ok</Button>
+
+        </Button.Group>
+      </Form>
 
     </Container>
   );
