@@ -5,7 +5,7 @@ import MainHeader from "./components/MainHeader";
 function App() {
   return (
     <Container>
-      <MainHeader />
+      <MainHeader title="Budget"/>
 
       <Statistic size='small'>
         <Statistic.Label>Your balance:</Statistic.Label>
@@ -35,7 +35,7 @@ function App() {
         </Grid>
       </Segment>
 
-      <Header as='h3'>History</Header>
+      <MainHeader type="h3" title="History"></MainHeader>
 
       <Segment color='red'>
         <Grid columns={3} textAlign='right'>
@@ -76,7 +76,7 @@ function App() {
         </Grid>
       </Segment>
 
-      <Header as='h3'>Add new transaction</Header>
+      <MainHeader type="h3" title='Add new transaction'></MainHeader>
       <Form unstackable>
         <Form.Group>
           <Form.Input icon='tags' width={12} label='Description' placeholder='New shinny thing' />

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Header } from 'semantic-ui-react'
 
-function MainHeader() {
+function MainHeader({title, type='h1'}) {
   return (
-    <Header as='h1'>Budget</Header>
+    <Header as={type}>{title}</Header>
   )
 }
 
