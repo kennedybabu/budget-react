@@ -14,6 +14,11 @@ function App() {
     const result = entries.filter(entry => entry.id !== id)
     setEntries(result)
   }
+
+  const addEntry = (description, value) => {
+    const result = entries.concat({id: entries.length + 1, description, value})
+    setEntries(result)
+  }
   return (
     <Container>
       <MainHeader title="Budget"/>
@@ -27,7 +32,7 @@ function App() {
       <EntryLines entries={entries} deleteEntry={deleteEntry}/>
 
       <MainHeader type="h3" title='Add new transaction' />
-      <NewEntryForm />
+      <NewEntryForm addEntry={addEntry}/>
     </Container>
   );
 }
