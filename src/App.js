@@ -7,8 +7,6 @@ import EntryLines from "./components/EntryLines";
 import MainHeader from "./components/MainHeader";
 import ModalEdit from "./components/ModelEdit";
 import NewEntryForm from "./components/NewEntryForm";
-import {legacy_createStore as createStore, legacy_createStore} from "redux"
-import {configureStore} from "@reduxjs/toolkit"
 
 function App() {
   const [description, setDescription] = useState('')
@@ -20,12 +18,6 @@ function App() {
   const [incomeTotal, setIncomeTotal] = useState(0)
   const [expenseTotal, setExpenseTotal] = useState(0)
   const [total, setTotal] = useState(0)
-
-  const store = legacy_createStore((state = initialEntries) => {
-    return state
-  }) 
-
-  console.log(store.getState())
 
   useEffect(() => {
     if(!isOpen && entryId){
@@ -50,8 +42,7 @@ function App() {
       setIsExpense(entry.isExpense)
       setIsOpen(true)
     }
-  }
-  
+  }  
 
   const deleteEntry = (id) => {
     const result = entries.filter(entry => entry.id !== id)
