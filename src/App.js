@@ -29,6 +29,7 @@ function App() {
       setEntries(newEntries)
       resetEntry()
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   },[isOpen])
 
   const editEntry = (id) => {
@@ -65,9 +66,9 @@ function App() {
     let totalExpenses = 0
     entries.map(entry => {
       if(entry.isExpense) {
-        return totalExpenses += entry.value
+        return totalExpenses += Number(entry.value)
       } 
-      return totalIncome += entry.value      
+      return totalIncome += Number(entry.value)      
     })
     setTotal(totalIncome - totalExpenses)
     setExpenseTotal(totalExpenses)
