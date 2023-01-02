@@ -18,13 +18,13 @@ const reducer = (state = initialEntries, action) => {
   var initialEntries = [
     {
       id:1,
-      description:"Work income redux",
+      description:"Work income",
       value: 1000.00,
       isExpense:false
     },
     {
       id:2,
-      description:"Water Bill redux",
+      description:"Water Bill",
       value: 20.00,
       isExpense:true
     },

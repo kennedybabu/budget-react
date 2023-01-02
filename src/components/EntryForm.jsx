@@ -1,10 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Checkbox, Form, Segment } from 'semantic-ui-react'
 
 function EntryForm({description, value, setIsExpense, setValue, isExpense, setDescription}) {
-//     const [description, setDescription] = useState('')
-//     const [value, setValue] = useState('')
-//   const [isExpense, setIsExpense] = useState(true)
+
   return (
     <>   
         <Form.Group widths={3}>
