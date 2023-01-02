@@ -7,6 +7,7 @@ import EntryLines from "./components/EntryLines";
 import MainHeader from "./components/MainHeader";
 import ModalEdit from "./components/ModelEdit";
 import NewEntryForm from "./components/NewEntryForm";
+import { useSelector } from "react-redux"
 
 function App() {
   const [description, setDescription] = useState('')
@@ -18,6 +19,8 @@ function App() {
   const [incomeTotal, setIncomeTotal] = useState(0)
   const [expenseTotal, setExpenseTotal] = useState(0)
   const [total, setTotal] = useState(0)
+
+  const entriesRedux = useSelector(state => state.entries)
 
   useEffect(() => {
     if(!isOpen && entryId){
@@ -83,7 +86,7 @@ function App() {
 
       <MainHeader type="h3" title="History" />
 
-      <EntryLines entries={entries} editEntry={editEntry} deleteEntry={deleteEntry} setIsOpen={setIsOpen}/>
+      <EntryLines entries={entriesRedux} editEntry={editEntry} deleteEntry={deleteEntry} setIsOpen={setIsOpen}/>
 
       <MainHeader type="h3" title='Add new transaction' />
       <NewEntryForm addEntry={addEntry} description={description} value={value} isExpense={isExpense} setDescription={setDescription} setValue={setValue} setIsExpense={setIsExpense}/>

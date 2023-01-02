@@ -1,4 +1,4 @@
-import { combineReducers, leagcy_createstore as createStore } from "redux"
+import { combineReducers, createStore } from "redux"
 import entriesReducers from "../reducers/entries.reducers"
 
 const configureStore = () => {
@@ -6,6 +6,5 @@ const configureStore = () => {
         entries: entriesReducers
     }))
 }
-
 
 export default configureStore
