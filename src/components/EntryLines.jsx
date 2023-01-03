@@ -8,7 +8,7 @@ function EntryLines({entries, setIsOpen, editEntry}) {
     <Container>
     
     {entries.map((entry) => (
-        <EntryLine key={entry.id} editEntry={editEntry} {...entry} setIsOpen={setIsOpen} />
+        <EntryLine key={entry.id} {...entry}  />
       ))}
     </Container>
   )
