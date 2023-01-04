@@ -5,8 +5,7 @@ import EntryLine from './EntryLine'
 
 function EntryLines({entries, setIsOpen, editEntry}) {
   return (
-    <Container>
-    
+    <Container>    
     {entries.map((entry) => (
         <EntryLine key={entry.id} {...entry}  />
       ))}
