@@ -1,8 +1,9 @@
-import { delay } from "redux-saga/effects"
+import { take } from "redux-saga/effects"
 
 export function* testSaga(){
     while(true){
-        yield delay(1000)
+        console.log('starting saga')
+        yield take('TEST_MESSAGE')
         console.log("i'm a saga func")
     }
     
