@@ -7,7 +7,8 @@ import EntryLines from "./components/EntryLines";
 import MainHeader from "./components/MainHeader";
 import ModalEdit from "./components/ModelEdit";
 import NewEntryForm from "./components/NewEntryForm";
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { getAllEntries } from "./actions/entries.actions";
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
 
   const {isOpen, id} = useSelector(state => state.modals)
   const entries = useSelector(state => state.entries)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
       const index = entries.findIndex(entry => entry.id === id)
@@ -40,15 +43,8 @@ function App() {
   }, [entries])
 
   useEffect(() => {
-    fetchInitialData()
+    dispatch(getAllEntries())
   }, [])
-
-  const fetchInitialData = async () => {
-    const res = await fetch('http://localhost:3002/entries')
-    const data = await res.json()
-    console.log(data)
-  }
-
 
   return (
     <Container>
