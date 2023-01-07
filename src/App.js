@@ -38,6 +38,18 @@ function App() {
     setExpenseTotal(totalExpenses)
     setIncomeTotal(totalIncome)
   }, [entries])
+
+  useEffect(() => {
+    fetchInitialData()
+  }, [])
+
+  const fetchInitialData = async () => {
+    const res = await fetch('http://localhost:3002/entries')
+    const data = await res.json()
+    console.log(data)
+  }
+
+
   return (
     <Container>
       <MainHeader title="Budget"/>
