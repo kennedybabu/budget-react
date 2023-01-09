@@ -1,34 +1,57 @@
 {
   "entries": [
-    {
-      "description": "Transport Bills for Jan",
-      "value": 120,
-      "isExpense": true,
-      "id": 1
+  {   
+      "id": 1,
+      "description": "Income"   
+      
     },
     {
       "id": 2,
-      "description": "Water Bill",
-      "value": 20,
-      "isExpense": true
+      "description": "Water Bill"
+    
     },
     {
       "id": 3,
-      "description": "Rent",
-      "value": 300,
-      "isExpense": true
+      "description": "Rent"
+    
     },
     {
       "id": 4,
-      "description": "Power bill",
-      "value": 50,
-      "isExpense": true
+      "description": "Power bill"
+  
     },
     {
       "id": 67,
-      "description": "Transport Bill",
-      "value": 120,
-      "isExpense": true
+      "description": "Transport Bill"
+    
     }
-  ]
+  ],
+  "values" : [
+    {   
+        "id": 1,
+        "value": 1000,
+        "isExpense": false
+        
+      },
+      {
+        "id": 2,
+        "value": 20,
+        "isExpense": true
+      },
+      {
+        "id": 3,
+        "value": 300,
+        "isExpense": true
+      },
+      {
+        "id": 4,
+        "value": 50,
+        "isExpense": true
+      },
+      {
+        "id": 67,
+        "value": 120,
+        "isExpense": true
+      }
+    ]
 }
