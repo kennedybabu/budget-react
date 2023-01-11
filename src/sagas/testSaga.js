@@ -1,4 +1,4 @@
-import { call, delay, fork, put, take } from "redux-saga/effects"
+import { call, delay, fork, put, take, takeEvery } from "redux-saga/effects"
 
 function double(num){
     return num * 2
@@ -23,20 +23,48 @@ function* doNothing(){
     console.log('Im doing nothing')
 }
 
+
 export function* testSagaFork(){
     while(true){
         yield take('TEST_MESSAGE_2')
-        // yield delay(1000)
-        yield call(doNothing)
-        // yield fork(doNothing)
-        // yield fork(doNothing)
+        yield fork(doNothing)
+        yield fork(doNothing)
+        yield fork(doNothing)
     }
 }
 
 
-export function* dispatchTest() {
+export function* testSagaTakeEvery(){
+    const {payload} = yield takeEvery('TEST_MESSAGE_4', takeSagaTakeEveryProcess)
+    console.log(`Finish TakeEvery for index ${payload}`)
+}
+
+
+export function* takeSagaTakeEveryProcess({ payload }){
+    yield console.log(`Process for index ${payload}`)
+}
+
+
+export function* infinitySaga(){
+    console.log('Starting infinite saga')
     while(true){
-        yield delay(3000)
-        yield put({type:'TEST_MESSAGE_2', payload: 1000})
+        yield delay(500)
     }
+    console.log('Ending infinte loop')
+}
+
+
+export function* testSagaCancel(){
+    yield take('TEST_MESSAGE_4')
+    yield fork(infinitySaga)
+}
+
+
+export function* dispatchTest() {
+    let index = 0
+    yield put({type:'TEST_MESSAGE_4', payload: index}) 
+    // while(true){
+    //     yield delay(500)
+    //     index ++
+    // }
 }
