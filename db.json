@@ -5,8 +5,12 @@
       "description": "Income"
     },
     {
-      "id": 2,
-      "description": "Water Bill"
+      "id": "5bc471de-4580-4a1e-9d8f-1540b747628b",
+      "description": "cape"
+    },
+    {
+      "id": "ac56e8c3-0d7d-43bb-a46c-ab0cb4171dfa",
+      "description": "new entry"
     }
   ],
   "values": [
@@ -16,24 +20,14 @@
       "isExpense": false
     },
     {
-      "id": 2,
-      "value": 20,
-      "isExpense": true
+      "id": "5bc471de-4580-4a1e-9d8f-1540b747628b",
+      "isExpense": true,
+      "value": "150"
     },
     {
-      "id": 3,
-      "value": 300,
-      "isExpense": true
-    },
-    {
-      "id": 4,
-      "value": 50,
-      "isExpense": true
-    },
-    {
-      "id": 67,
-      "value": 120,
-      "isExpense": true
+      "id": "ac56e8c3-0d7d-43bb-a46c-ab0cb4171dfa",
+      "isExpense": true,
+      "value": "120"
     }
   ]
 }
