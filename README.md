@@ -1,8 +1,13 @@
 # Getting Started with Create React App
+a budget application that lets one input their income or expense value,
+and have their balance calculated
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Technologies used
+1. ReactJs
+2. Redux/ Saga
+3. Semantic UI
+4. JavaScript
 
 In the project directory, you can run:
 
